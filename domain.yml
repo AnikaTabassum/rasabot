@@ -1,0 +1,368 @@
+intents:
+- greet
+- new_user
+- product_menu
+- Home_button
+- Grow_Fast_Product_info
+- Pension_Plan_Product_info
+- Anando_Plan_Product_info
+- Rakkhak_Plan_Product_info
+- Premium_Plan_Product_info
+- Twenty_Years_Product_info
+- Twentyfive_Years_Product_info
+- Young_Citizen_Product_info
+- Group_Insurance_Product_info
+- BIMA_Diamond_Product_info
+- career_financial_associate
+- location
+- dhaka_location
+- chittagong_location
+- life_insurance
+- why_lic
+- existing_user
+- phone_number
+- dofb
+- plan_name
+- pay_premium
+- dates
+- premium_related
+- slots_values
+- sum_assured
+
+slots:
+  phone:
+    type: unfeaturized
+    auto_fill: false
+  dob:
+    type: unfeaturized
+    auto_fill: false
+
+actions:
+- utter_greet
+- utter_data
+- utter_user_menu
+- utter_home_menu
+- utter_product_menu
+- utter_grow_fast_product_info
+- utter_pension_plan_product_info
+- utter_anando_plan_product_info
+- utter_rakkhak_plan_product_info
+- utter_premium_plan_product_info
+- utter_twenty_years_product_info
+- utter_twentyfive_years_product_info
+- utter_BIMA_diamond_product_info
+- utter_young_citizen_product_info
+- utter_group_insurance_product_info
+- utter_career_financial_associate
+- utter_location
+- utter_dhaka_location
+- utter_chittagong_location
+- utter_life_insurance
+- utter_why_lic
+- utter_ask_phone
+- utter_ask_dob
+- utter_slots_values
+- utter_plan_name
+- utter_pay_premium
+- utter_dates
+- utter_premium_related
+- utter_sum_assured
+- utter_login
+
+forms:
+- existing_user_form
+
+templates:
+  utter_greet:
+  - text: "Hi! Welcome to LIC Bangladesh Ltd.<br/>Our objective to spread life insurance
+      widely with a view to reach all insurable population in the country and providing
+      them adequate financial cover at a reasonable cost."
+  utter_user_menu:
+  - text: "Please select an option from the following-"
+    buttons:
+    - title: "New User"
+      payload: "/Home_button"
+    - title: "Existing User"
+      payload: "/existing_user"
+  utter_ask_phone:
+  - text: "Please provide your mobile number"
+  utter_ask_dob:
+  - text: "Please provide your date of birth in DD/MM/YY format"
+  utter_login:
+  - text: "You informations:\n
+             - Phone Number: {phone}\n
+             - Date of Birth: {dob}"
+  utter_slots_values:
+  - text: "Select an option:"
+    buttons:
+    - title: "Plan Name"
+      payload: "/plan_name"
+    - title: "Pay Premium"
+      payload: "/pay_premium"
+    - title: "Dates"
+      payload: "/dates"
+    - title: "Premium Related"
+      payload: "/premium_related"
+    - title: "Sum Assured"
+      payload: "/sum_assured"
+  utter_plan_name:
+  - text: "Plan Code and Name-"
+    buttons:
+    - title: "806 - LIC’s BIMA Diamond"
+      payload: "/slots_values"
+    - title: "back"
+      payload: "/slots_values"
+  utter_pay_premium:
+  - text: "Options to pay premium"
+    buttons:
+    - title: "Pay Online Via: https://licbangladesh.com/pay-direct-1/"
+    - title: "Other Mode of Payment"
+    - title: "back"
+      payload: "/slots_values"
+  utter_dates:
+  - text: "Some important dates-"
+    buttons:
+    - title: "Last Premium Paid: 12/21/2019"
+    - title: "Premium Due Date: 1/21/2020"
+    - title: "Maturity Date: 5/21/2019 and Term: 16"
+    - title: "back"
+      payload: "/slots_values"
+  utter_premium_related:
+  - text: "Premium Related Informations-"
+    buttons:
+    - title: "Premium Frequency: Monthly"
+    - title: "Installment Premium: 1488"
+    - title: "back"
+      payload: "/slots_values"
+  utter_sum_assured:
+  - text: "Sum Assured: 200000"
+    buttons:
+    - title: "back"
+      payload: "/slots_values"
+  utter_home_menu:
+  - text: "What are you looking for today?"
+    buttons:
+    - title: "Product Information"
+      payload: "/product_menu"
+    - title: "Career-Financial Associate"
+      payload: "/career_financial_associate"
+    - title: "Why life insurance?"
+      payload: "/life_insurance"
+    - title: "Why LIC?"
+      payload: "/why_lic"
+    - title: "Our Location"
+      payload: "/location"
+    - title: "Policy Details"
+      payload: "/existing_user"
+  utter_product_menu:
+  - text: "Great. We have more than 10 prodcuts. Which product info do you want to
+      know?"
+    buttons:
+    - title: "801 - LIC's Jibon Rakkhak"
+      payload: "/Rakkhak_Plan_Product_info"
+    - title: "802 - LIC's Nabo Jibon Anando"
+      payload: "/Anando_Plan_Product_info"
+    - title: "803 - LIC’s Single Premium Plan"
+      payload: "/Premium_Plan_Product_info"
+    - title: "804 - LIC's New Money back Plan - 25 Yrs"
+      payload: "/Twentyfive_Years_Product_info"
+    - title: "805 - LIC's New Money Back Plan - 20 Yrs"
+      payload: "/Twenty_Years_Product_info"
+    - title: "806 - LIC’s BIMA Diamond"
+      payload: "/BIMA_Diamond_Product_info"
+    - title: "807 - LIC’s Young Citizen"
+      payload: "/Young_Citizen_Product_info"
+    - title: "808 - LIC’s Pension Plan"
+      payload: "/Pension_Plan_Product_info"
+    - title: "809 - LIC’s Grow Fast"
+      payload: "/Grow_Fast_Product_info"
+    - title: "810 - LIC’s Health Plus"
+      payload: "/Group_Insurance_Product_info"
+  utter_grow_fast_product_info:
+  - text: "Unique feature of the Scheme is Guaranteed Addition of Tk.50/= per 1000
+      Sum Assured Per year. <br/>It is Single Premium plan with Limited period of 06 years.
+      In built First Year Accidental Death benefit before age 65 without paying additional
+      Premium. <br/>In built Total Permanent Disability before Age65 without paying additional
+      Premium. <br/>Death Benefit will be 120% of Sum Assured with Guaranteed Addition
+      of Tk.50/= per thousand per year. <br/>Maturity Benefit will be Sum Assured with
+      Guaranteed Addition of Tk.50/= per thousand per year and Loyalty additions (if
+      any)."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_pension_plan_product_info:
+  - text: "LIC’s Pension Plan is combination of with profit, whole life assurance plan.<br/>
+      Unique feature of the Plan is after completion of premium payment age and on
+      Maturity together with the Lump Sum Amount, 8% of the Sum Assured per year upto
+      100 Years of Age will be payable. <br/>Death Coverage will be continued after premium
+      payment period upto 100 years of Age. Death Coverage will be Basic Sum Assured,
+      Vested Bonus and Final Additional Bonus, if any. <br/>Maturity Benefit will be payable
+      after completion of Premium Paying Term."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_anando_plan_product_info:
+  - text: "This Plan provides high risk cover and attractive returns. It’s with profit
+      Endowment Assurance Whole Life Plan. <br/>The Unique feature of the Plan is after
+      end of the Premium Paying Term, policyholder will receive the Sum Assured, Reversionary
+      Bonus and Final Additional Bonus, if any.  After that the policy will be continue
+      till the 100 Age of the Policyholder for the Basic Sum Assured without payment
+      of the Premium. <br/>Age between 18 Years completed and 50 years. <br/>Death Benefit-
+      Within Premium Paying Term, 125% of the SA + Accumulated Bonus is payable. After
+      Premium Paying Term, an amount equal to Basic Sum Assured is payable. <br/>Maturity
+      Benefit- Basic Sum Assured + Reversionary Bonus + Final Additional Bonus."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_rakkhak_plan_product_info:
+  - text: "We are offering this policy at a Low Cost with Maximum Sum Assured of 2
+      Lakhs. Upto Age 50 No Medical is required. Minimum Sum Assured will be 75000/=
+      <br/>Accident Benefit available under the Policy with additional Premium of Tk.0.50
+      per 1000 Sum Assured. <br/>Age Between 13 Years completed and 55 Years. <br/>Death Benefit:
+       Basic Sum Assured or 105% of Total premium paid as on the date of death +
+      Loyalty Additions, if any <br/>Maturity Benefit: Guaranteed Basic Sum Assured with
+      Loyalty Additions."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_premium_plan_product_info:
+  - text: "Policy holder can pay the premium in one Time. <br/>Unique Feature of the Plan
+      is from the Age of 90 days to 65 Years can avail this policy. Minimum Term is
+      10 Years. <br/>Death Benefit will be Sum Assured, Reversionary Bonus and Final Additional
+      Bonus, if any. <br/>Maturity Benefit will be Sum Assured, Reversionary Bonus and
+      Final Additional Bonus, if any. <br/>Loan Facility is available during the 2nd year
+      of the Policy itself."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_twenty_years_product_info:
+  - text: "It is With Profit, Limited Premium Paying and endowment policy. We are offering
+      two types of Money Back Policy with Term as 25 Years and 20 Years. The Policyholder
+      has to be pay the premium for the period of 20 years and 15 years only. <br/>Survival
+      Benefit- <br/>For 20 Years Term Policy, Guaranteed 20% of Sum Assured after the Completion
+      of 5,10 and 15 years will be payable as Survival Benefit. Age between 13 years
+      completed and 50 years. <br/>Death Benefit will be 125% of the Basic Sum Assured,
+      Vested Bonus and Final Additional Bonus, if any. <br/>Maturity Benefit will be Guaranteed
+      40% of the Basic Sum Assured, Vested Bonus and Final Additional Bonus, if any."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_twentyfive_years_product_info:
+  - text: "It is With Profit, Limited Premium Paying and endowment policy. We are offering
+      two types of Money Back Policy with Term as 25 Years and 20 Years. The Policyholder
+      has to be pay the premium for the period of 20 years and 15 years only. <br/>Survival
+      Benefit-<br/>For 25 years Term Policy, Guaranteed 15% of Sum Assured after the Completion
+      of 5,10,15 and 20 Years will be payable as Survival Benefit. Age between 13
+      years completed and 45 years <br/>Death Benefit will be 125% of the Basic Sum Assured,
+      Vested Bonus and Final Additional Bonus, if any. <br/>Maturity Benefit will be Guaranteed
+      40% of the Basic Sum Assured, Vested Bonus and Final Additional Bonus, if any."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_BIMA_diamond_product_info:
+  - text: "This Plan is combination of With Profits, Money Back, Limited Premium Paying
+      Term and extended risk cover to 50% Sum Assured for half the Policy term after
+      Maturity. <br/>All the features are included with the reasonable cost, Maximum Sum
+      Assured will be Tk.5,00,000/= and Minimum Sum Assured will be Tk.1,00,000/=.<br/>
+      Minimum Age will be 14 years Completed. <br/>The policy is available with the Term
+      of 16,20 and 24 years and their respective premium paying period will be 10,12
+      and 15 years only. <br/>15% of Sum Assured will be payable after 4th, 8th and 12th
+      year for 16 Years Term Policy. <br/>15% of Sum Assured will be payable after 4th,
+      8th, 12th and 16th year for 20 Years Term Policy. <br/>12% of Sum Assured will be
+      payable after 4th, 8th, 12th, 16th and 20th year for 25 years Term Policy. <br/>Maturity
+      Benefit will be 55% of Sum Assured and Loyalty Additions if any, for 16 years
+      Term Policy.<br/>For 20/24 years policy, the Maturity Benefit will be 40% of Sum Assured and Loyalty Additions,
+       if any <br/>Death Benefit will be Basic Sum Assured and Loyalty Additions, if any.
+      <br/>After end of the Policy Term, after receiving the Maturity of the Policy, the Death Benefit 
+      under extended period will be for half of the Policy Term with 50% of the Basic Sum Assured."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_young_citizen_product_info:
+  - text: "This policy is exclusively meant for Children. <br/>Minimum Age at entry will
+      be 90 days completed and Maximum Age at entry will be 12 years. <br/>This Plan is
+      combination of With Profits, Money Back, Limited Premium Paying Term Policy.
+      Unique feature of the Plan is suitable for Children Education Needs. <br/>Minimum
+      Sum Assured will be 1 Lakhs and No Limit on Maximum Sum Assured. <br/>The following
+      Optional Riders are available. <br/>1)Premium Waiver  Benefit (Age-18 to 55 Years)<br/>
+      During the Premium Paying Term, the proposer dies, the future payment of premium
+      will be waived. <br/>2)Term Rider for Parents (Age-18 to 55 years)<br/> During the Premium
+      Paying Term, the proposer dies, the Rider Sum Assured will be payable to the
+      Nominee. <br/>Survival Benefit- The Survival Benefit will be paid from Child Age
+      18 to 22 for 5 years. <br/>While taking the Policy, the proposer can choose the %
+      of Survival Benefit. At present there are 4 Options are available. <br/>Maturity
+      Benefit will be balance Sum Assured, Vested Bonus and Final Additional Bonus,
+      if any. <br/>Death Benefit will be Sum Assured, Vested Bonus, Final Additional Bonus,
+      if any."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_group_insurance_product_info:
+  - text: "It’s a Unique Health Insurance Plan to cover the Risk of Seven Major Illness with 
+      traditional endowment policy features. <br/>The plan is available for Fixed Term of 15 years and 20 years.
+      Minimum Age at entry will be 18 years (Completed) and Maximum Age at entry will be 50 years.
+      <br/>Minimum Sum Assured will be Tk.1 Lakh and Maximum will be Tk.5 Lakhs. Immediate payment 
+      of 50% Sum Assured and 10% of Sum Assured every year on admission of Illness.  <br/>Thereafter 
+      either on Death or on Maturity 50% of the Sum Assured with accrued Bonus on full Sum Assured 
+      will be paid to the Life Assured. If illness Claim not admitted, either on Death or on Maturity 
+      100% of the Sum Assured with accrued Bonus on full Sum Assured will be paid."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_life_insurance:
+  - text: "Insurance is an arrangement, by which an insurer undertakes to provide a
+      compensation for specified loss, damage, illness, or death in return for payment
+      of a specified premium. <br/>In Life Insurance that pays out a sum of money either
+      after a set period or on the death of the insured person"
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_location:
+  - text: "Our locations-"
+    buttons:
+    - title: "Dhaka"
+      payload: "/dhaka_location"
+    - title: "Narayangonj Branch"
+    - title: "Khulna Branch"
+    - title: "Jessore Branch"
+    - title: "Chittagong"
+      payload: "/chittagong_location"
+    - title: "Sylhet Branch"
+    - title: "Bogura branch"
+    - title: "Rangpur Branch"
+    - title: "Rajshahi Branch"
+    - title: "Home"
+      payload: "/Home_button"
+  utter_dhaka_location:
+  - text: "Our Dhaka Branches - Gulshan Branch, Uttara Branch and Mothijeel Branch"
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_chittagong_location:
+  - text: "Our Chittagong Branches - Agrabad Branch and Jubilee Road Branch"
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_career_financial_associate:
+  - text: "Life as an Insurance Advisor (Financial Associate)  of LIC Bangladesh Ltd,
+      If you are over 18 years of Age and passed SSC, a student, housewife, job seeker,
+      self-employed, work for a private concerns or a retired person. <br/>What we have
+      for you <br/>Freedom- <br/>BE A OWN BOSS. DECIDE YOUR WORKING HOURS. <br/>Training- <br/>Free and
+      Proper personal and Professional <br/>Income- <br/>Unlimited, EARN AS MUCH AS U WANT <br/>Brand
+      Name- <br/>Easy selling and always Trust Worthy <br/>Status & Prestige- <br/>Financial and
+      Social <br/>Opportunities for promotions and higher incentives based on performance."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_why_lic:
+  - text: "LIC Bangladesh Limited is a Joint venture subsidiary of LIC of India. <br/>-Globally
+      recognized for excellent Claim settlement <br/>-World’s Leading Insurance Company
+      in terms of number of Policies. <br/>-Globally Spread across in 15 other countries
+      <br/>-A large and reputed life insurer <br/>-A variety of products for every segment of
+      customers <br/>-Online services in all the branches."
+    buttons:
+    - title: "Home"
+      payload: "/Home_button"
+  utter_data:
+  - text: "data stored"
+
